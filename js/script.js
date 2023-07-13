@@ -2,6 +2,7 @@ document.addEventListener("alpine:init", () => {
   Alpine.store("data", {
     topic: "Alpine Tailwind Starter",
     count: 0,
+    zahl: 0
   });
 });
 
@@ -22,4 +23,8 @@ function inc10(){
 
 function sub10(){
   data().count -= 10;
+}
+
+function add(){
+  data().count += data().zahl;
 }

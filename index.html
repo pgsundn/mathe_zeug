@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
+  
 <head>
 
   <title>HTML Template + Alpine.js (CDN)</title>
@@ -32,6 +32,22 @@
 
   <div class ="container mx-auto max-w-xl">
   <p>Hello World!</p>
+
+<div>
+
+  <input class= "border  px-2 rounded shadow-md bg-green-200"   
+  placeholder="Zahl hier!"
+  x-model.number="$store.data.zahl"
+  > 
+
+</div>
+
+<div>
+  <button class= "border  px-2 rounded shadow-md bg-blue-200" 
+  onclick="add()">
+  Add
+  </button>
+</div>
 
 
   <p x-text="$store.data.count">
@@ -85,6 +101,7 @@
   </button>
 
 </div>
+
 
 
 
