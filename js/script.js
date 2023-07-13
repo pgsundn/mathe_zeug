@@ -15,3 +15,11 @@ function inc(){
 function dec(){
   data().count -= 1;
 }
+
+function inc10(){
+  data().count += 10;
+}
+
+function sub10(){
+  data().count -= 10;
+}
