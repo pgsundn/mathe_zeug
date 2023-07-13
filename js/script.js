@@ -39,3 +39,7 @@ function add() {
 function saveCount() {
   localStorage.setItem('count', data().count);
 }
+
+function resetCounter() {
+  data().count = 0
+}
