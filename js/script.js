@@ -1,30 +1,41 @@
 document.addEventListener("alpine:init", () => {
+  const storedCount = localStorage.getItem('count');
+  const initialCount = storedCount ? parseInt(storedCount) : 0;
+  
   Alpine.store("data", {
     topic: "Alpine Tailwind Starter",
-    count: 0,
+    count: initialCount,
     zahl: 0
   });
 });
 
-const data = () => Alpine.store("data")
+const data = () => Alpine.store("data");
 
-
-function inc(){
+function inc() {
   data().count += 1;
+  saveCount();
 }
 
-function dec(){
+function dec() {
   data().count -= 1;
+  saveCount();
 }
 
-function inc10(){
+function inc10() {
   data().count += 10;
+  saveCount();
 }
 
-function sub10(){
+function sub10() {
   data().count -= 10;
+  saveCount();
 }
 
-function add(){
+function add() {
   data().count += data().zahl;
+  saveCount();
+}
+
+function saveCount() {
+  localStorage.setItem('count', data().count);
 }

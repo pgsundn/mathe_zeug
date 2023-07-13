@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  
+
 <head>
 
   <title>HTML Template + Alpine.js (CDN)</title>
@@ -30,82 +30,90 @@
 
   <h1 class="font-semibold text-lg m-4" x-text="$store.data.topic"> </h1>
 
-  <div class ="container mx-auto max-w-xl">
-  <p>Hello World!</p>
-
-<div>
-
-  <input class= "border  px-2 rounded shadow-md bg-green-200"   
-  placeholder="Zahl hier!"
-  x-model.number="$store.data.zahl"
-  > 
-
-</div>
-
-<div>
-  <button class= "border  px-2 rounded shadow-md bg-blue-200" 
-  onclick="add()">
-  Add
-  </button>
-</div>
-
-
-  <p x-text="$store.data.count">
-
-  </p>
-
   <div class="container mx-auto max-w-xl">
+    <p>Hello World!</p>
 
-    <button class="border  px-2 rounded shadow-md bg-blue-200" 
-    onclick="inc()">
+    <div>
 
-      +
+      <input class="border  px-2 rounded shadow-md bg-green-200" placeholder="Zahl hier!"
+        x-model.number="$store.data.zahl">
 
-    </button>
+    </div>
+
+    <div>
+      <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="add()">
+        Add
+      </button>
+    </div>
+
+    Neue Zahl
+    <p x-text="$store.data.count">
+
+    </p>
+
+    Gespeicherte Zahl:
+    <p x-text="localStorage.getItem('count')">
+
+    </p>
+
+
+    <div class="container mx-auto max-w-xl">
+
+      <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="inc()">
+
+        +
+
+      </button>
+
+    </div>
+
+    <div class="container mx-auto max-w-xl">
+
+      <button class="border  px-2 rounded shadow-md bg-red-200" onclick="dec()">
+
+        -
+
+      </button>
+
+    </div>
 
   </div>
 
   <div class="container mx-auto max-w-xl">
 
-    <button class="border  px-2 rounded shadow-md bg-red-200" 
-    onclick="dec()">
+    <button class="border  px-2 rounded shadow-md bg-blue-200" onclick="inc10()">
 
-      -
+      +10
 
     </button>
 
   </div>
 
-</div>
+  </div>
 
-<div class="container mx-auto max-w-xl">
+  <div class="container mx-auto max-w-xl">
 
-  <button class="border  px-2 rounded shadow-md bg-blue-200" 
-  onclick="inc10()">
+    <button class="border  px-2 rounded shadow-md bg-red-200" onclick="sub10()">
 
-    +10
+      -10
 
-  </button>
+    </button>
 
-</div>
+  </div>
 
-</div>
-
-<div class="container mx-auto max-w-xl">
-
-  <button class="border  px-2 rounded shadow-md bg-red-200" 
-  onclick="sub10()">
-
-    -10
-
-  </button>
-
-</div>
+  <!-- <div>
+  <p>Gespeicherte Zahlen im Local Storage:</p>
+  <ul>
+    <li x-for="(value, key) in localStorage" 
+        x-text="`${key}: ${value}`"
+    ></li>
+  </ul>
+</div> -->
 
 
 
 
-  
+
 </body>
 
 </html>
