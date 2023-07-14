@@ -5,7 +5,8 @@ document.addEventListener("alpine:init", () => {
   Alpine.store("data", {
     topic: "Alpine Tailwind Starter",
     count: initialCount,
-    zahl: 0
+    zahl: 0,
+    color: "Apfelessig"
   });
 });
 
@@ -43,3 +44,4 @@ function saveCount() {
 function resetCounter() {
   data().count = 0
 }
+
