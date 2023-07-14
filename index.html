@@ -28,9 +28,9 @@
 
 <body class="m-2 space-y-4" x-data>
 
-<div class="container mx-auto max-w-xl">
-  <h1 class="font-semibold text-lg m-4" x-text="$store.data.topic"> </h1>
-</div>
+  <div class="container mx-auto max-w-xl">
+    <h1 class="font-semibold text-lg m-4" x-text="$store.data.topic"> </h1>
+  </div>
 
   <div class="container mx-auto max-w-xl">
     <p>Hello World!</p>
@@ -48,48 +48,28 @@
       </button>
     </div>
 
-      
-      <div class="flex flex-col space-y-2 container mx-auto max-w-xl" Farbe wählen!>
-          <select 
-          class="p-2 rounded-md"
-          placeholder="Farbe wählen!"
-          x-model="$store.data.color">
-          <option value="Placeholder">Farbe wählen!</option>
-          <template x-for="[label,colour] in [['Rot','bg-red-400'],['Grün','bg-green-400'],['Blau','bg-blue-400']]">
-              <option 
-              class="p-4"
-              :class="colour"
-              :value="colour"
-              x-text="label"/>
-            </template>
-          </select>
-      </div>
-  
-    </body> 
 
-    <p x-text="$store.data.count" :class="$store.data.color"></p>
+    <div class="flex flex-col space-y-2 container mx-auto max-w-xl">
+      <select class="p-2 rounded-md" x-model="$store.data.color">
+        <option value="">Farbe wählen!</option>
+        <template x-for="[label,color] in [['Rot','bg-red-400'],['Grün','bg-green-400'],['Blau','bg-blue-400']]">
+          <option class="p-4" :class="color" :value="color" x-text="label" />
+        </template>
+      </select>
+    </div>
 
-<div>
-  <select 
-  name="apfel" 
-  id="" 
-  aria-placeholder="apfelsaft">
-    <option value="Weiß">Weiß</option>
-    <option value="Blau">Blau</option>
-    <option value="Grün">Grün++</option>
-    <option value="Gelb">Gelb</option>
-  </select>
-</div>
 
-    <!-- Neue Zahl
-    <p x-text="$store.data.count"> -->
+    <div class="flex flex-col space-y-2 container mx-auto max-w-xl">
+      <select class="p-2 rounded-md" x-model="$store.data.font">
+        <option value="Placeholder">Font wählen!</option>
+        <template x-for="[label,font] in [['Sans','font-sans'],['Serif','font-serif'],['Mono','font-mono']]">
+          <option class="p-4" :class="font" :value="font" x-text="label" />
+        </template>
+      </select>
+    </div>
 
-    </p>
-
-    <!-- Gespeicherte Zahl:
-    <p x-text="localStorage.getItem('count')">
-
-    </p> -->
+    <!-- Ausgabefeld -->
+    <p x-text="$store.data.count" :class="[$store.data.color, $store.data.font]"></p>
 
     <div class="flex space-x-2 container mx-auto max-w-xl">
 
@@ -125,7 +105,7 @@
     <!-- hintergrundfarbe -->
     <!-- font -->
     <!-- css klasse entweder wählen oder nicht, hängt vom feld ab -->
-
+  </div>
 </body>
 
 </html>

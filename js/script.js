@@ -6,7 +6,8 @@ document.addEventListener("alpine:init", () => {
     topic: "Alpine Tailwind Starter",
     count: initialCount,
     zahl: 0,
-    color: "Apfelessig"
+    color: "Apfelessig",
+    font : "font-sans"
   });
 });
 
